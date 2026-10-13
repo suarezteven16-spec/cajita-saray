@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="La cajita de las sorpresas de Saray: una aventura divertida con acertijos y sorpresas." />
+  <title>La cajita de las sorpresas de Saray 🎁</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Fondo animado: corazones, estrellas y flores amarillas -->
+  <div class="decor" aria-hidden="true">
+    <div id="floating-layer"></div>
+    <div class="flowers" id="flowers-layer"></div>
+  </div>
+
+  <!-- Barra de música -->
+  <button id="music-btn" class="music-btn" type="button" aria-pressed="false" title="Activar o desactivar la música">
+    <span id="music-icon">🔇</span>
+    <span class="music-label">Música</span>
+  </button>
+
+  <!-- Barra superior del juego -->
+  <header id="hud" class="hud hidden" aria-live="polite">
+    <div class="hud-item">⭐ Nivel <strong id="hud-level">1</strong></div>
+    <div class="hud-item">💛 Puntos <strong id="hud-points">0</strong></div>
+    <div class="hud-item">🎖️ <strong id="hud-badges">0</strong></div>
+  </header>
+
+  <main class="stage">
+
+    <!-- ===================== PANTALLA INICIAL ===================== -->
+    <section id="screen-start" class="screen active">
+      <div class="card">
+        <div class="big-gift" aria-hidden="true">🎁</div>
+        <h1 class="title">La cajita de las sorpresas de Saray 🌻</h1>
+        <p class="subtitle">
+          ¡Hola, Saray! 💗 Hay una aventura secreta esperándote.<br />
+          ¿Te atreves a descubrirla?
+        </p>
+        <button id="start-btn" class="btn btn-main" type="button">Comenzar la aventura ✨</button>
+        <p class="hint">Consejo: activa la música 🔊 para que sea más bonito.</p>
+      </div>
+    </section>
+
+    <!-- ===================== PANTALLA DE JUEGO ===================== -->
+    <section id="screen-game" class="screen">
+      <div class="panel">
+        <h2 id="level-title" class="level-title">Nivel 1</h2>
+        <p id="level-desc" class="level-desc"></p>
+        <div id="level-progress" class="progress"><span id="progress-bar"></span></div>
+
+        <!-- Contenedor dinámico de cada reto -->
+        <div id="challenge" class="challenge"></div>
+
+        <!-- Recompensas -->
+        <div id="badges" class="badges" aria-label="Recompensas conseguidas"></div>
+      </div>
+    </section>
+
+    <!-- ===================== PANTALLA FINAL ===================== -->
+    <section id="screen-final" class="screen">
+      <div class="card card-final">
+        <div class="final-emoji" aria-hidden="true">🌻💛</div>
+        <h2 class="final-title">¡Lo lograste, Saray! 🌻💛</h2>
+        <p class="final-text">
+          Espero que esta pequeña aventura te haya regalado un momento
+          bonito y una gran sonrisa.
+        </p>
+        <p class="final-stats">
+          Conseguiste <strong id="final-points">0</strong> puntos y
+          <strong id="final-badges">0</strong> recompensas. ¡Eres increíble! 🎉
+        </p>
+        <button id="replay-btn" class="btn btn-main" type="button">Volver a jugar 🔁</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Aviso flotante -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Nube de confeti -->
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>
